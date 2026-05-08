@@ -1,20 +1,17 @@
-# 집반찬연구소 — 프론트엔드 실습 프로젝트
-
-> ViveCoding 프론트엔드 강의 실습용 쇼핑몰 프로젝트  
-> 반찬 상품 목록 → 상세 페이지 → 장바구니로 이어지는 3단계 페이지 흐름을 구현합니다.
+# 집반찬연구소.
 
 ---
 
 ## 기술 스택
 
-| 분류 | 기술 |
-|------|------|
-| 마크업 | HTML5 |
-| 스타일 | SCSS → CSS (Dart Sass, `@use` 문법) |
-| 스크립트 | Vanilla JavaScript (ES6+) |
-| 데이터 | Fetch API + 외부 JSON (GitHub Pages) |
+| 분류      | 기술                                    |
+| --------- | --------------------------------------- |
+| 마크업    | HTML5                                   |
+| 스타일    | SCSS → CSS (Dart Sass, `@use` 문법)     |
+| 스크립트  | Vanilla JavaScript (ES6+)               |
+| 데이터    | Fetch API + 외부 JSON (GitHub Pages)    |
 | 상태 관리 | `localStorage` (장바구니 데이터 영속화) |
-| 빌드 | SCSS 컴파일 (별도 번들러 없음) |
+| 빌드      | SCSS 컴파일 (별도 번들러 없음)          |
 
 ---
 
@@ -71,29 +68,35 @@ scss_origin/
 ## SCSS 설계 특이사항
 
 ### `@use` 현대 문법 적용
+
 ```scss
 /* main.scss */
-@use "variables" as *;   // 변수 전역 노출 ($color-black 등 직접 사용)
+@use "variables" as *; // 변수 전역 노출 ($color-black 등 직접 사용)
 @use "reset";
 @use "layout";
 ```
+
 기존 `@import` 대신 Dart Sass 권장 `@use` 문법을 사용합니다.  
 `as *` 옵션으로 네임스페이스 없이 변수를 바로 참조합니다.
 
 ### 변수 분리 (`_variables.scss`)
+
 ```scss
-$container-max : 1200px;
-$color-black   : #000;
-$md-active-bg  : #0D5611;   // 브랜드 그린
-$radius-pill   : 30px;
-$slider-height : 450px;
+$container-max: 1200px;
+$color-black: #000;
+$md-active-bg: #0d5611; // 브랜드 그린
+$radius-pill: 30px;
+$slider-height: 450px;
 ```
 
 ### 중첩 선택자 활용
+
 ```scss
 .md-banchan {
   > ul > li {
-    &.active { background-color: $md-active-bg; }
+    &.active {
+      background-color: $md-active-bg;
+    }
   }
 }
 ```
@@ -103,6 +106,7 @@ $slider-height : 450px;
 ## JavaScript 주요 패턴
 
 ### 1. Fetch API — Promise 체이닝 vs async/await 비교 실습
+
 ```js
 // 01_fetch_banchan.js — .then() 체이닝
 fetch(URL).then(res => res.json()).then(data => { ... });
@@ -114,6 +118,7 @@ async function loadNewBanchan() {
 ```
 
 ### 2. URL 파라미터로 페이지 간 데이터 전달
+
 ```js
 // 상품 카드 → sub.html 이동 시 데이터 인코딩
 const params = new URLSearchParams({ name, img, desc, price });
@@ -125,19 +130,22 @@ const name = params.get("name");
 ```
 
 ### 3. localStorage — 장바구니 영속화
+
 ```js
 // 담기 (동일 상품은 수량만 누적)
 const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-const existing = cart.find(c => c.name === item.name);
+const existing = cart.find((c) => c.name === item.name);
 existing ? (existing.qty += item.qty) : cart.push(item);
 localStorage.setItem("cart", JSON.stringify(cart));
 ```
 
 ### 4. 카테고리 탭 필터 (MD 추천, `04_fetch_md_banchan.js`)
+
 - JSON 데이터를 `category` 필드로 필터링해 카드 재렌더링
 - `mouseover` 이벤트로 탭 전환 + `.active` 클래스 토글
 
 ### 5. 자동 슬라이더 (`slider.js`)
+
 ```js
 setInterval(() => {
   index = (index + 1) % banners.length;
@@ -149,12 +157,12 @@ setInterval(() => {
 
 ## 외부 API (데이터 소스)
 
-| 섹션 | 엔드포인트 |
-|------|-----------|
-| 알뜰반찬 | `https://dino-21.github.io/zipbanchan/json/01_banchan.json` |
+| 섹션       | 엔드포인트                                                     |
+| ---------- | -------------------------------------------------------------- |
+| 알뜰반찬   | `https://dino-21.github.io/zipbanchan/json/01_banchan.json`    |
 | 어린이반찬 | `https://dino-21.github.io/zipbanchan/json/02_kidbanchan.json` |
-| 신상반찬 | `https://dino-21.github.io/zipbanchan/json/03_newbanchan.json` |
-| MD추천반찬 | `https://dino-21.github.io/zipbanchan/json/04_mdbanchan.json` |
+| 신상반찬   | `https://dino-21.github.io/zipbanchan/json/03_newbanchan.json` |
+| MD추천반찬 | `https://dino-21.github.io/zipbanchan/json/04_mdbanchan.json`  |
 
 JSON 필드: `name` / `main_img` / `description` / `price` / `category`
 
