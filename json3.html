@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>집반찬</title>
+
+  <link rel="stylesheet" href="css/json3.css">
+
+
+</head>
+
+<body>
+
+  
+  <main class="container">
+    
+    <div class="new-banchan section-grid">
+      <h3>새로 나온 반찬</h3>
+      <p>착한 가격으로 챙기는 든든 한 끼</p>
+
+      <!-- 여기 안에 JS로 카드들이 채워짐 -->
+
+     <!--  <a href="#">
+        <div class="product-card">
+          <img src="img/03_new_banchan/new_banchan1.jpg" alt="">
+          <h4>새콤 오이무생채</h4>
+          <p>아이들이 먹기 좋은 깔끔한 무생채</p>
+          <h5>2800원</h5>
+        </div>
+      </a> -->
+
+    
+    </div>
+
+  
+  </main>
+  <script>
+  async function loadNewBanchan() {
+    const res = await fetch("https://dino-21.github.io/zipbanchan/json/03_newbanchan.json");
+    const data = await res.json();
+
+    const box = document.querySelector(".new-banchan");
+
+    data.forEach(item => {
+      const a = document.createElement("a");
+      a.href = "#";
+
+      const card = document.createElement("div");
+      card.className = "product-card";
+
+      card.innerHTML = `
+        <img src="${item.main_img}" alt="${item.name}">
+        <h4>${item.name}</h4>
+        <p>${item.description}</p>
+        <h5>${item.price}원</h5>
+      `;
+
+      a.appendChild(card);
+      box.appendChild(a);
+    });
+  }
+
+  loadNewBanchan();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+[{
+  "id": 1,
+  "name": "미나리무침",
+  "description": "향긋하고 고소한 봄나물",
+  "price": 4500,
+  "main_img": "img/03_new_banchan/new_banchan1.jpg"
+},{
+  "id": 2,
+  "name": "새콤달콤 오이미나리침",
+  "description": "입맛 없을 때 최고의 요",
+  "price": 4800,
+  "main_img": "img/03_new_banchan/new_banchan2.jpg"
+},{
+  "id": 3,
+  "name": "한돈 미나리 고추장불고기 반조리",
+  "description": "매콤달콤 고추장불고기와 향긋한 미나리의 조화",
+  "price": 15800,
+  "main_img": "img/03_new_banchan/new_banchan3.jpg"
+},{
+  "id": 4,
+  "name": "새콤달콤 통나물무침",
+  "description": "톡톡 터지는 식감",
+  "price": 5600,
+  "main_img": "img/03_new_banchan/new_banchan4.jpg"
+},{
+  "id": 5,
+  "name": "향긋한 봄나물무침",
+  "description": "봄날씨가득 담은 요리!",
+  "price": 6800,
+  "main_img": "img/03_new_banchan/new_banchan5.jpg"
+},{
+  "id": 6,
+  "name": "한돈 버섯고추장찌개",
+  "description": "살만한 날엔 딱! 얼큰한 한술",
+  "price": 12900,
+  "main_img": "img/03_new_banchan/new_banchan6.jpg"
+},{
+  "id": 7,
+  "name": "고추장 파리열채볶음",
+  "description": "고소한 익힘의 맛과 파리열채의 밸도독 볶음",
+  "price": 5500,
+  "main_img": "img/03_new_banchan/new_banchan7.jpg"
+},{
+  "id": 8,
+  "name": "모둠장아찌",
+  "description": "6가지 재료가 어우러진 새콤짭짤한 밥의",
+  "price": 4800,
+  "main_img": "img/03_new_banchan/new_banchan8.jpg"
+}]

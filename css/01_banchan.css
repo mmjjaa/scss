@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* ========== Reset ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "맑은 고딕";
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ========== Layout 공통 컨테이너 ========== */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+
+/* ========== Header ========== */
+header {
+  min-height: 150px;
+  align-items: center;
+}
+
+/* ========== Main ========== */
+main {
+  min-height: 600px;
+}
+
+.section-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.banchan {
+  width: 100%;
+  min-height: 1000px;
+}
+
+div > h3 {
+  width: 100%;
+  font-size: 27px;
+  text-align: center;
+  line-height: 30px;
+}
+div > p {
+  width: 100%;
+  font-size: 17px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* ========== Product Card ========== */
+.product-card {
+  width: 280px;
+  height: 395px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.product-card > img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.product-card > h4 {
+  font-size: 17px;
+  color: #000;
+}
+.product-card > p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.product-card > h5 {
+  font-size: 17px;
+  color: #000;
+}
+
+/* ========== MD Card ========== */
+.md-card {
+  width: 280px;
+  height: 515px;
+}
+.md-card > img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.md-card > h4 {
+  font-size: 17px;
+  color: #000;
+}
+.md-card > p {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+.md-card > h5 {
+  font-size: 17px;
+  color: #000;
+}
+
+/*# sourceMappingURL=01_banchan.css.map */

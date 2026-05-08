@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>집반찬</title>
+
+  <link rel="stylesheet" href="css/json1.css">
+
+
+</head>
+
+<body>
+
+
+
+  <main class="container">
+    <div class="banchan section-grid">
+      <h3>부담없는 알뜰 반찬</h3>
+      <p>착한 가격으로 챙기는 든든 한 끼</p>
+
+      <!-- 여기 안에 JS로 카드들이 채워짐 -->
+      <!-- <a href="#">
+        <div class="product-card">
+          <img src="img/01_banchan/banchan1.jpg" alt="">
+          <h4>무나물</h4>
+          <p>푹 익혀서 먹기 편해요</p>
+          <h5>2800원</h5>
+        </div>
+      </a> -->
+
+    
+
+
+    </div>
+
+  </main>
+
+  <script>
+    fetch("https://dino-21.github.io/zipbanchan/json/01_banchan.json")
+      .then(res => res.json())
+      .then(data => {
+        const box = document.querySelector(".banchan");
+
+        data.forEach(item => {
+          box.innerHTML += `
+            <a href="#">
+              <div class="product-card">
+                <img src="${item.main_img}" alt="${item.name}">
+                <h4>${item.name}</h4>
+                <p>${item.description}</p>
+                <h5>${item.price}원</h5>
+              </div>
+            </a>
+          `;
+        });
+      });
+  </script>
+
+</body>
+
+</html>

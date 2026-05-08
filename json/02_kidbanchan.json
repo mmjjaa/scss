@@ -1,0 +1,25 @@
+[{
+  "id": 1,
+  "name": "새콤 오이무생채",
+  "description": "아이들이 먹기 좋은 깔끔한 무생채",
+  "price": 2800,
+  "main_img": "img/02_kid_banchan/kid_banchan1.jpg"
+},{
+  "id": 2,
+  "name": "간장 감자조림",
+  "description": "포근포근 잘 익혔어요",
+  "price": 3500,
+  "main_img": "img/02_kid_banchan/kid_banchan2.jpg"
+},{
+  "id": 3,
+  "name": "마카로니 범벅",
+  "description": "알록달록 다채로운",
+  "price": 3800,
+  "main_img": "img/02_kid_banchan/kid_banchan3.jpg"
+},{
+  "id": 4,
+  "name": "소세지 야채볶음",
+  "description": "탱글한 소시지와 신선한 야채의 만남",
+  "price": 3800,
+  "main_img": "img/02_kid_banchan/kid_banchan4.jpg"
+}]

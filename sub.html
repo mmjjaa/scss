@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>집반찬 - 상품 상세</title>
+  <link rel="stylesheet" href="css/sub.css">
+  <script src="js/sub.js"></script>
+</head>
+<body>
+
+  <header class="container">
+    <div class="search-box">
+      <input type="text" placeholder="반찬을 입력해주세요">
+      <img src="img/search_icon.png" alt="">
+    </div>
+    <div class="logo">
+      <a href="index.html"><img src="img/logo.png" alt="집반찬연구소"></a>
+    </div>
+    <div class="right-box">
+      <div class="login">
+        <ul>
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#"><img src="img/icon1.png" alt="">브랜드</a></li>
+          <li><a href="#"><img src="img/icon2.png" alt="">반찬보기</a></li>
+          <li><a href="cart.html"><img src="img/icon3.png" alt="">장바구니</a></li>
+          <li><a href="#"><img src="img/icon4.png" alt="">내정보</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="sub-content">
+
+      <!-- 브레드크럼 -->
+      <div class="breadcrumb">
+        <a href="index.html">홈</a>
+        <span class="sep">&gt;</span>
+        <a href="index.html">부담없는 알뜰 반찬</a>
+        <span class="sep">&gt;</span>
+        <span id="breadcrumb-name">상품명</span>
+      </div>
+
+      <!-- 상품 상세 영역 -->
+      <div class="product-detail">
+
+        <!-- 상품 이미지 -->
+        <div class="product-img-wrap">
+          <img id="product-img" alt="" style="display:none">
+        </div>
+
+        <!-- 상품 정보 -->
+        <div class="product-info">
+          <h1 id="product-name">상품명</h1>
+          <p class="product-desc" id="product-desc">상품 설명</p>
+
+          <div class="info-row">
+            <span class="info-label">판매가</span>
+            <span class="price-value"><span id="product-price">0</span>원</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">배송비</span>
+            <span class="info-text">3,000원 <em>(30,000원 이상 무료배송)</em></span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">배송</span>
+            <span class="info-text">평일 오후 2시 이전 주문 당일 출고</span>
+          </div>
+
+          <div class="info-row quantity-row">
+            <span class="info-label">수량</span>
+            <div class="quantity-box">
+              <button class="qty-btn" onclick="changeQty(-1)">－</button>
+              <input type="number" id="qty" value="1" min="1" max="99" readonly>
+              <button class="qty-btn" onclick="changeQty(1)">＋</button>
+            </div>
+          </div>
+
+          <div class="total-row">
+            <span>총 주문금액</span>
+            <strong id="total-price">0원</strong>
+          </div>
+
+          <div class="btn-group">
+            <button class="btn-cart" id="btn-cart">장바구니 담기</button>
+            <button class="btn-buy" id="btn-buy">바로 구매</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 탭 메뉴 -->
+      <div class="product-tabs">
+        <ul class="tab-menu">
+          <li class="active" onclick="showTab('info', this)">상품정보</li>
+          <li onclick="showTab('delivery', this)">배송안내</li>
+          <li onclick="showTab('review', this)">이용후기</li>
+        </ul>
+
+        <div class="tab-content" id="tab-info">
+          <div class="tab-inner">
+            <img id="product-img-detail" alt="" style="display:none">
+            <div class="product-desc-detail">
+              <h3>상품 특징</h3>
+              <ul>
+                <li>국내산 신선한 재료만 사용합니다.</li>
+                <li>주문 후 당일 조리하여 신선하게 배송합니다.</li>
+                <li>방부제 및 인공조미료를 사용하지 않습니다.</li>
+                <li>냉장 보관 후 개봉 전 5일 이내 드세요.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-delivery" style="display:none">
+          <div class="tab-inner">
+            <h3>배송 안내</h3>
+            <ul>
+              <li>평일 오후 2시 이전 주문: 당일 출고 (주말·공휴일 제외)</li>
+              <li>기본 배송비: 3,000원 / 30,000원 이상 무료배송</li>
+              <li>배송 소요일: 출고 후 1~2일 (도서산간 지역 추가 소요)</li>
+              <li>신선도 유지를 위해 아이스팩과 함께 포장합니다.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-review" style="display:none">
+          <div class="tab-inner">
+            <p class="no-review">아직 등록된 이용후기가 없습니다.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="container">
+    <div class="footer-left">
+      <h4>고객센터</h4>
+      <p class="tel">1588-3754</p>
+      <p class="email">zipbanchan@sannamchon.co.kr</p>
+      <p class="time">
+        평일 08:30~17:30 / 토요일 08:30~12:00<br>
+        점심시간 12:00~13:00<br>
+        일요일, 공휴일은 휴무입니다.
+      </p>
+    </div>
+    <div class="footer-right">
+      <h4>집반찬연구소</h4>
+      <p>
+        인천광역시 서구 가석로 26(가좌동) 집반찬연구소 대표자: 박종철<br>
+        사업자등록번호: 121-86-17743 통신판매업 신고번호: 제 2023-인천서구-3834 호 개인정보보호책임자: 정문채<br>
+        제품 문의: zipbanchan@sannamchon.co.kr
+      </p>
+      <p class="links">
+        <a href="#">집반찬연구소 소개</a> |
+        <a href="#">이용약관</a> |
+        <a href="#">개인정보처리방침</a>
+      </p>
+      <p class="copy">Copyright © SANNAMCHON CORP. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

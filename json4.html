@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>집반찬</title>
+
+  <link rel="stylesheet" href="css/json4.css">
+
+
+</head>
+
+<body>
+
+  
+  <main class="container">
+    
+
+    <div class="md-banchan section-grid">
+      <h3>MD 추천반찬</h3>
+      <p>이번 주 가장 추천하는 제품만 골라드려요</p>
+      <ul>
+        <li><a href="#">비빔밥</a></li>
+        <li><a href="#">국/찌개/탕</a></li>
+        <li><a href="#">어린이 반찬</a></li>
+        <li><a href="#">볶음</a></li>
+        <li><a href="#">무침</a></li>
+        <li><a href="#">메인요리</a></li>
+        <li><a href="#">조림</a></li>
+      </ul>
+
+      
+      <!-- 여기 안에 JS로 카드들이 채워짐 -->
+
+      <!-- <a href="#">
+        <div class="md-card">
+          <img src="img/04_md_banchan/bibim/bibim_1.jpg" alt="">
+          <h4>새콤 오이무생채</h4>
+          <p>아이들이 먹기 좋은 깔끔한 무생채</p>
+          <h5>2800원</h5>
+        </div>
+      </a>
+ -->
+
+
+
+
+    </div>
+
+
+
+  </main>
+
+
+  <script>
+   // css, li a 링크 추가했음
+  function createMdCard(item) {
+    const a = document.createElement("a");
+    a.href = "#";
+
+    const card = document.createElement("div");
+    card.className = "md-card";
+
+    card.innerHTML = `
+      <img src="${item.main_img}" alt="${item.name}">
+      <h4>${item.name}</h4>
+      <p>${item.description}</p>
+      <h5>${item.price}원</h5>
+    `;
+
+    a.appendChild(card);
+    return a;
+  }
+
+  function renderCategory(data, category, section) {
+    section.querySelectorAll(".md-card").forEach(el => el.parentElement.remove());
+
+    data
+      .filter(item => item.category === category)
+      .forEach(item => section.appendChild(createMdCard(item)));
+  }
+
+  function setActive(liList, activeLi) {
+    liList.forEach(li => li.classList.remove("active"));
+    activeLi.classList.add("active");
+  }
+
+  // ============================
+  //      JSON 로딩
+  // ============================
+  fetch("https://dino-21.github.io/zipbanchan/json/04_mdbanchan.json")
+    .then(res => res.json())
+    .then(data => {
+      const mdSection = document.querySelector(".md-banchan");
+      const liList = mdSection.querySelectorAll("ul li");
+
+      const categories = ["bibim", "soup", "kid", "bokkeum", "muchim", "main", "jorim"];
+
+      // ★ 초기 화면: 비빔밥
+      setActive(liList, liList[0]);
+      renderCategory(data, "bibim", mdSection);
+
+      liList.forEach((li, index) => {
+        const aTag = li.querySelector("a");
+
+        aTag.addEventListener("mouseover", (e) => {
+          e.preventDefault();   // a 태그 이동 막기
+
+          // 활성화 스타일
+          setActive(liList, li);
+
+          // 카드 다시 렌더링
+          renderCategory(data, categories[index], mdSection);
+        });
+      });
+    });
+</script>
+
+</body>
+
+</html>

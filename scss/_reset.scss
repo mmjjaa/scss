@@ -1,0 +1,33 @@
+/* ======================================
+   Reset (브라우저 기본 스타일 초기화)
+   - 모든 페이지 공통
+   - layout / main 보다 먼저 로드
+====================================== */
+
+/* 모든 요소 기본 여백 제거 + 박스 크기 통일 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 목록 스타일 제거 */
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+/* 기본 폰트 및 글자 색상 */
+body {
+  font-family: "맑은 고딕";
+  color: #000;
+}
+
+/* a 태그 기본 밑줄 제거 */
+a {
+  text-decoration: none;
+  color: #000;
+}

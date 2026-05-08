@@ -1,0 +1,13 @@
+@use "variables" as *; //as * 안 붙이면 무조건 variables.를 써야 함, max-width: variables.$container-max;
+@use "reset";
+@use "layout";
+
+
+
+/* ========== sub ========== */
+.sub {
+  min-height: 600px;
+  width: 1200px;
+  background-color: aqua;
+  /* 나중에 콘텐츠 늘어남 */
+}

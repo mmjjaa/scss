@@ -1,0 +1,6 @@
+.vscode/
+.claude/
+.sass-cache/
+Thumbs.db
+.DS_Store
+*.map

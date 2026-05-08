@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>집반찬</title>
+
+  <link rel="stylesheet" href="css/json2.css">
+
+
+</head>
+
+<body>
+
+  <main class="container">
+    
+    <div class="kid-banchan section-grid">
+      <h3>어린이 반찬</h3>
+      <p>착한 가격으로 챙기는 든든 한 끼</p>
+
+      <!-- 여기 안에 JS로 카드들이 채워짐 -->
+
+       <!-- <a href="#">
+        <div class="product-card">
+          <img src="img/02_kid_banchan/kid_banchan1.jpg" alt="">
+          <h4>새콤 오이무생채</h4>
+          <p>아이들이 먹기 좋은 깔끔한 무생채</p>
+          <h5>2800원</h5>
+        </div>
+      </a> -->
+
+    </div>
+
+  </main>
+
+  
+<script>
+  const URL = "https://dino-21.github.io/zipbanchan/json/02_kidbanchan.json";
+
+  fetch(URL)
+    .then(res => res.json())
+    .then(data => {
+      // 어린이 반찬 박스 찾기
+      const box = document.querySelector(".kid-banchan");
+
+      // 혹시 남아 있을지 모를 기존 카드 제거
+      const oldCards = box.querySelectorAll("a");
+      oldCards.forEach(a => a.remove());
+
+      // JSON 데이터로 카드 생성
+      data.forEach(item => {
+        const a = document.createElement("a");
+        a.href = "#";
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        const img = document.createElement("img");
+        img.src = item.main_img;      
+        img.alt = item.name;
+
+        const h4 = document.createElement("h4");
+        h4.textContent = item.name;
+
+        const p = document.createElement("p");
+        p.textContent = item.description;
+
+        const h5 = document.createElement("h5");
+        h5.textContent = item.price + "원";
+
+        // 조립
+        card.appendChild(img);
+        card.appendChild(h4);
+        card.appendChild(p);
+        card.appendChild(h5);
+
+        a.appendChild(card);
+        box.appendChild(a);
+      });
+    })
+    .catch(err => console.error("JSON 로딩 오류:", err));
+</script>
+
+</body>
+
+</html>

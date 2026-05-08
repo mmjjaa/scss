@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>집반찬</title>
+    
+  <link rel="stylesheet" href="css/slider2.css">
+ 
+</head>
+
+<body>
+ <div id="slidewrap">
+    <ul class="slide">
+      <li><img src="img/banner/banner_1.png"></li>
+      <li><img src="img/banner/banner_2.png"></li>
+      <li><img src="img/banner/banner_3.png"></li>
+      <li><img src="img/banner/banner_4.png"></li>
+      <li><img src="img/banner/banner_5.png"></li>
+    </ul>
+  </div>
+<script>
+  const slide = document.querySelector(".slide");
+  const width = 1500;
+
+  const move = () => {
+    // 1) 왼쪽으로 한 칸 이동
+    slide.style.transition = "0.6s";
+    slide.style.transform = `translateX(-${width}px)`;
+
+    // 2) 애니메이션이 끝난 뒤 실행
+    setTimeout(() => {
+      slide.appendChild(slide.firstElementChild); // 3) 첫번째를 뒤로 보내기
+      slide.style.transition = "none";            // 즉시 초기화
+      slide.style.transform = "translateX(0)";    // 원위치
+    }, 600); // transition 시간과 동일
+  };
+
+  setInterval(move, 3000);
+</script>
+
+</body>
+
+</html>

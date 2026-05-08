@@ -1,0 +1,60 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "맑은 고딕";
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Layout 공통 컨테이너 */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+
+/* Header */
+header {
+  height: 150px;           // 데모용 고정 높이
+  background-color: gold;
+}
+
+/* Slider */
+#slider {
+  width: 100%;
+  min-height: 450px;
+  background-color: tomato;
+}
+
+/*  Main */
+main {
+  min-height: 600px;       // 나중에 콘텐츠 늘어남
+  background-color: skyblue;
+}
+
+/* Footer */
+footer {
+  min-height: 200px;
+  background-color: greenyellow;
+}

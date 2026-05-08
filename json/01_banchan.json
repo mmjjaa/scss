@@ -1,0 +1,49 @@
+[{
+  "id": 1,
+  "name": "무나물",
+  "description": "푹 익혀서 먹기 편해요",
+  "price": 2800,
+  "main_img": "img/01_banchan/banchan1.jpg"
+},{
+  "id": 2,
+  "name": "미역줄기볶음",
+  "description": "바다의 채소 미역줄기",
+  "price": 2800,
+  "main_img": "img/01_banchan/banchan2.jpg"
+},{
+  "id": 3,
+  "name": "감자채볶음",
+  "description": "고소하면서 담백한 감자채볶음",
+  "price": 2800,
+  "main_img": "img/01_banchan/banchan3.jpg"
+},{
+  "id": 4,
+  "name": "한입 두부간장조림",
+  "description": "네모난 두부조림이 한입에 쏙",
+  "price": 2800,
+  "main_img": "img/01_banchan/banchan4.jpg"
+},{
+  "id": 5,
+  "name": "옥수수 버무리",
+  "description": "믿고 먹일 수 있는 반찬",
+  "price": 2800,
+  "main_img": "img/01_banchan/banchan5.jpg"
+},{
+  "id": 6,
+  "name": "무생채",
+  "description": "비빔밥 먹을 때 필수인 무생채",
+  "price": 2900,
+  "main_img": "img/01_banchan/banchan6.jpg"
+},{
+  "id": 7,
+  "name": "검은콩조림",
+  "description": "국내산 검은콩은 약콩입니다",
+  "price": 3800,
+  "main_img": "img/01_banchan/banchan7.jpg"
+},{
+  "id": 8,
+  "name": "건가지볶음",
+  "description": "국내산 건가지를 고소하게 볶았어요",
+  "price": 3800,
+  "main_img": "img/01_banchan/banchan8.jpg"
+}]

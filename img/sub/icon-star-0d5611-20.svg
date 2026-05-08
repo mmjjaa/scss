@@ -1,0 +1,6 @@
+<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="stars">
+<rect id="Rectangle Copy 8" opacity="0.01" x="0.575" y="1.075" width="18.85" height="18.85" fill="#D4D4D4" stroke="#939393" stroke-width="1.15"/>
+<path id="Star Copy 15" fill-rule="evenodd" clip-rule="evenodd" d="M9.9998 15.0352L6.19757 16.3583L6.28102 12.3333L3.84766 9.12605L7.70147 7.96162L9.9998 4.65625L12.2981 7.96162L16.152 9.12605L13.7186 12.3333L13.802 16.3583L9.9998 15.0352Z" fill="#0D5611" stroke="#0D5611" stroke-width="2" stroke-linejoin="round"/>
+</g>
+</svg>
